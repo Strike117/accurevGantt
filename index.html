@@ -1,4 +1,4 @@
-﻿<!Doctype html>
+﻿<!DOCTYPE html>
 <html lang="en-au">
     <head>
         <title>jQuery.Gantt</title>
@@ -33,9 +33,7 @@
 		</style>
 		<script src="js/jquery-1.7.min.js"></script>
 		<script src="js/jquery.fn.gantt.js"></script>
-		<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
-		<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>
-		<script src="http://taitems.github.com/UX-Lab/core/js/prettify.js"></script>
+		
 		<script src="js/jquery.bpopup.min.js"></script>
     </head>
     <body>
@@ -69,33 +67,46 @@
 						to: "/Date(1407124216634)/",
 						label: "VEC_QA3", 
 						customClass: "ganttRed"
-					}]
-				},{
-					name: "VEC_QA4",
-					desc: "agosto-septiembre",
-					values: [{
+					},{
 						from: "/Date(1407210662402)/",
 						to: "/Date(1407815462402)/",
 						label: "VEC_QA4", 
 						customClass: "ganttOrange"
-					}]
-				},{
-					name: "VEC_QA1",
-					desc: "septiembre..",
-					values: [{
+					},{
 						from: "/Date(1407901862402)/",
 						to: "/Date(1409716262402)/",
 						label: "VEC_QA1", 
 						customClass: "ganttGreen"
-					}]
-				},{
-					name: "VEC_QA2",
-					desc: "...",
-					values: [{
+					},{
 						from: "/Date(1409802662402)/",
 						to: "/Date(1411617062402)/",
-						label: "VEC_QA1", 
+						label: "VEC_QA2", 
 						customClass: "ganttBlue"
+					}]
+				},{
+					name: "",
+					desc: "julio-agosto",
+					values: [{
+						id: "t01",
+						from: "/Date(1406005200000)/",
+						to: "/Date(1407042000000)/",
+						label: "SIT-C", 
+						customClass: "ganttGray"
+					},{
+						from: "/Date(1407301200000)/",
+						to: "/Date(1407733200000)/",
+						label: "SIT-A", 
+						customClass: "ganttGray"
+					},{
+						from: "/Date(1407992400000)/",
+						to: "/Date(1409634000000)/",
+						label: "SIT-D", 
+						customClass: "ganttGray"
+					},{
+						from: "/Date(1409893200000)/",
+						to: "/Date(1411621200000)/",
+						label: "SIT-B", 
+						customClass: "ganttGray"
 					}]
 				}],
 				navigate: "scroll",
@@ -123,17 +134,15 @@
 				}
 			});
 
-			$(".gantt").popover({
+			/*$(".gantt").popover({
 				selector: ".bar",
 				title: "I'm a popover",
 				content: "And I'm the content of said popover.",
 				trigger: "hover"
 			});
-
-			prettyPrint();
-
+			prettyPrint();*/
 		});
 
     </script>
-    <iframe src="http://huahcoding.com/" width="80%" height="80%" id="accurevIframe" class="iframe"/>
+    <iframe src="http://localhost:85/AccuRevDashboard/" width="80%" height="80%" id="accurevIframe" class="iframe"/>
 </html>

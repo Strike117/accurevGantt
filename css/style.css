@@ -229,6 +229,13 @@
     color: #714715 !important;
 }
 
+.fn-gantt .ganttGray {
+    background-color: #DDD;
+}
+.fn-gantt .ganttOrange .fn-label {
+    color: #714715 !important;
+}
+
 .fn-gantt .depLine {
   background-color: transparent;
   position: absolute;
