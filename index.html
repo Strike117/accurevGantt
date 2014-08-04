@@ -1,0 +1,139 @@
+﻿<!Doctype html>
+<html lang="en-au">
+    <head>
+        <title>jQuery.Gantt</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
+        <link rel="stylesheet" href="http://taitems.github.com/UX-Lab/core/css/prettify.css" />
+		<style type="text/css">
+			body {
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 13px;
+				padding: 0 0 50px 0;
+			}
+			.contain {
+				width: 100%;
+				margin: 0 auto;
+			}
+			h1 {
+				margin: 40px 0 20px 0;
+			}
+			h2 {
+				font-size: 1.5em;
+				padding-bottom: 3px;
+				border-bottom: 1px solid #DDD;
+				margin-top: 50px;
+				margin-bottom: 25px;
+			}
+			table th:first-child {
+				width: 150px;
+			}
+		</style>
+		<script src="js/jquery-1.7.min.js"></script>
+		<script src="js/jquery.fn.gantt.js"></script>
+		<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+		<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>
+		<script src="http://taitems.github.com/UX-Lab/core/js/prettify.js"></script>
+		<script src="js/jquery.bpopup.min.js"></script>
+    </head>
+    <body>
+
+		<div class="contain">
+
+
+	    	<h1>
+	    		VEC Streams timeLine
+	    	</h1>
+				
+			</div>
+			<div class="gantt"></div>
+			
+			
+
+    </body>
+    <script>
+    	test = {};
+		$(function() {
+
+			"use strict";
+
+			$(".gantt").gantt({
+				source: [{
+					name: "VEC_QA3",
+					desc: "julio-agosto",
+					values: [{
+						id: "t01",
+						from: "/Date(1405914537277)/",
+						to: "/Date(1407124216634)/",
+						label: "VEC_QA3", 
+						customClass: "ganttRed"
+					}]
+				},{
+					name: "VEC_QA4",
+					desc: "agosto-septiembre",
+					values: [{
+						from: "/Date(1407210662402)/",
+						to: "/Date(1407815462402)/",
+						label: "VEC_QA4", 
+						customClass: "ganttOrange"
+					}]
+				},{
+					name: "VEC_QA1",
+					desc: "septiembre..",
+					values: [{
+						from: "/Date(1407901862402)/",
+						to: "/Date(1409716262402)/",
+						label: "VEC_QA1", 
+						customClass: "ganttGreen"
+					}]
+				},{
+					name: "VEC_QA2",
+					desc: "...",
+					values: [{
+						from: "/Date(1409802662402)/",
+						to: "/Date(1411617062402)/",
+						label: "VEC_QA1", 
+						customClass: "ganttBlue"
+					}]
+				}],
+				navigate: "scroll",
+				scale: "days",
+				maxScale: "months",
+				minScale: "days",
+				itemsPerPage: 100,
+				onItemClick: function(data) {
+					console.log(data[0].textContent);
+
+					$('#accurevIframe').bPopup({
+						fadeSpeed: 'slow',
+						//easing: 'easeOutBack', //uses jQuery easing plugin
+            			//speed: 450,
+            			transition: 'slideDown'
+					});
+				},
+				onAddClick: function(dt, rowId) {
+					//alert("Empty space clicked - add an item!");
+				},
+				onRender: function() {
+					if (window.console && typeof console.log === "function") {
+						//console.log("chart rendered");
+					}
+				}
+			});
+
+			$(".gantt").popover({
+				selector: ".bar",
+				title: "I'm a popover",
+				content: "And I'm the content of said popover.",
+				trigger: "hover"
+			});
+
+			prettyPrint();
+
+		});
+
+    </script>
+    <iframe src="http://huahcoding.com/" width="80%" height="80%" id="accurevIframe" class="iframe"/>
+</html>
